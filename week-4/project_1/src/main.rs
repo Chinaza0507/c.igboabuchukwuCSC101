@@ -13,7 +13,7 @@ fn main() {
     let b:f64 = input.trim().parse().expect("please enter a valid value");
 
     input.clear();
-    println!("Ente value for c: ");
+    println!("Enter value for c: ");
     io::stdin().read_line(&mut input).expect("Failed to read line");
     let c:f64 =input.trim().parse().expect("Please enter a valid value");
     //calculation for discriminant

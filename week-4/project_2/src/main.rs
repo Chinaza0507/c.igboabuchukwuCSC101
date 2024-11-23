@@ -1,4 +1,4 @@
-use std::io;
+;use std::io;
 fn main() {
    let mut input = String::new();
    println!("Is the employee experience? (yes/no): "); 
@@ -10,7 +10,7 @@ fn main() {
         println!("Enter the age of the employee: ");
         io::stdin().read_line(&mut input).expect("failed to read line");
         let age:i32 = input.trim().parse().expect("Please enter a valid number");
-        //determin the incentive based on age
+        //determine the incentive based on age
         if age >= 40 {
             incentive = 1_560_000;
 
@@ -21,11 +21,11 @@ fn main() {
             incentive = 1_300_00 * 12; //monthly to annual
 
         }else {
-            incentive = 0;
+            incentive = 0; //no condition is met
         }
 
     }else {
-        incentive = 100_000;
+        incentive = 100_000; //inexperienced employees have a fixed incentive
 
     }
     println!("The annual incentive for the employee is: N{}",incentive );
