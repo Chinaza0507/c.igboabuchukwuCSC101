@@ -1,13 +1,9 @@
 use std::io;
 fn main() {
 //menu and prices
-let _food_menu:[(&str, &str, f32); 5] = [
-      ("p","Pounded Yam/Edinkaiko Soup",3200.0),     
-      ("F","Fried rice & chicken",3000.0),
-      ("A","Amala & Ewedu Soup", 2500.0),
-      ("E","Eba & Egusi Soup",2000.0),
-      ("W","White Rice & Stew",2500.0),
-];
+let mut total_cost:f32 = 0.0;
+loop {
+
 
 println!("Enter your choice of food_menu");
 println!("P = Pounded Yam/Edinkaiko Soup-3200.0"); 
@@ -17,23 +13,39 @@ println!("E = Eba & Egusi Soup-2000.0");
  println!("W = White Rice & Stew-2500.0");
 
 
+  
  println!("Enter food_menu");
 
  let mut input = String::new();
  io::stdin().read_line(&mut input).expect("failed to read line");
- let food_menu:f32 = input.trim().parse().expect("Please enter a valid input");
- 
+ let food_menu = input.trim();
+if  food_menu == "QUIT" {
+    break;
+}
 
  println!("Enter quantity_desired");
  let mut input = String::new();
  io::stdin().read_line(&mut input).expect("failed to read line");
- let quantity_desired:u32 = input.trim().parse().expect("Please enter a quantity within range");
-
+ let quantity_desired:f32 = input.trim().parse().expect("Please enter a quantity within range");
+let   mut price:f32 = 0.0;
+if food_menu == "P" {
+     price = 3200.0;
+}else if food_menu == "F" {
+      price = 3000.0;
+}else if  food_menu == "A" {
+      price = 2500.0;
+}else if  food_menu == "E" {
+     price = 2000.0;
+}else if  food_menu == "W" {
+      price = 2500.0;
+}
  
- let mut total_cost = food_menu* quantity_desired as f32;
+ let cost =  price * quantity_desired ;
+ total_cost += cost;
+       
  
- println!("{} * {} = {}",food_menu,quantity_desired,total_cost);
-
+ println!("Added {} to your total. current total: {}",cost ,total_cost);
+  }  
  if total_cost>10000.0 {
      let discount = total_cost * 0.05;
      total_cost -= discount;
@@ -44,3 +56,4 @@ println!("E = Eba & Egusi Soup-2000.0");
 
 
  }
+
