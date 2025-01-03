@@ -4,7 +4,7 @@ fn main() {
     let mut input1 = String::new();
     let mut input2 = String::new();
 
-    println!("What is your profession [INPUT ANY LETTER WHERE]:\n");
+    
 
     println!("T for teacher\nL for lawyer\nA for academic\nOA for office administrator");
 
@@ -103,7 +103,7 @@ fn main() {
         if years_of_exp >= 1.0 && years_of_exp <= 2.0 {
             println!("Your profession is {}",teacher[0]);
         } else if years_of_exp >= 3.0 && years_of_exp <= 5.0 {
-            println!("Your professiom is {}", teacher[1]);
+            println!("Your professiom is {}", teacherC[1]);
         } else if years_of_exp >= 5.0 && years_of_exp <= 8.0 {
             println!("Your positon is {}", teacher[2]);
         } else if years_of_exp >= 8.0 && years_of_exp <= 10.0 {
