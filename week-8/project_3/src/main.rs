@@ -9,7 +9,7 @@ fn main() {
     file.write_all("S/N,Name of Commisioner, Ministry, Geopolitical Zone\n".as_bytes()).expect("Failed to write to file");
     for i in 0..5 {
        let row = format!(
-"{},{},{},{}\n",
+"{}, {}, {}, {}\n",
 i +1,
 comissioners[i],
 ministries[i],
